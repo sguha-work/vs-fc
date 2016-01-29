@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace vs_fc
 {
-    public partial class Form1 : Form
+    public partial class form_vbfc : Form
     {
-        public Form1()
+        public form_vbfc()
         {
             InitializeComponent();
         }
+
+        
+
+        
     }
 }

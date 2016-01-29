@@ -1,1 +1,9 @@
 c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.exe.config
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.exe
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.pdb
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.csprojResolveAssemblyReference.cache
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs_fc.form_vbfc.resources
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs_fc.Properties.Resources.resources
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.csproj.GenerateResource.Cache
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.exe
+c:\users\sahasrangshu.guha\documents\visual studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.pdb
