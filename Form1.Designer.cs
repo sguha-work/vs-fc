@@ -169,10 +169,11 @@
             // 
             // cb_chartType
             // 
+            this.cb_chartType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_chartType.FormattingEnabled = true;
             this.cb_chartType.Location = new System.Drawing.Point(25, 247);
             this.cb_chartType.Name = "cb_chartType";
-            this.cb_chartType.Size = new System.Drawing.Size(399, 21);
+            this.cb_chartType.Size = new System.Drawing.Size(399, 24);
             this.cb_chartType.TabIndex = 15;
             // 
             // groupBox2

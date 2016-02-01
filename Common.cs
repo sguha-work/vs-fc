@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Web.Helpers;
 using System.Web.Script.Serialization;
 namespace fc_ve
 {
@@ -25,7 +24,7 @@ namespace fc_ve
                 return instance;
             }
         }
-        public dynamic decodeJSON(String jsonString)
+        public Dictionary<string, Dictionary<string, Dictionary<string, string>>> decodeJSON(String jsonString)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
             var data = ser.Deserialize<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(jsonString);
