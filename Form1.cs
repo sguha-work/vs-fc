@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using fc_ve.PrepareFormElements;
+using System.IO;
 namespace fc_ve
 {
     public partial class form_vbfc : Form
@@ -24,7 +24,9 @@ namespace fc_ve
 
         private void initializeFormElements()
         {
-              cb_chartType.DataSource = fc_ve.PrepareFormElements.  
+            PrepareFormElements p = new PrepareFormElements();
+            //MessageBox.Show(Path.GetFullPath("dataSource/final.json"));
+            cb_chartType.DataSource = p.prepareChartTypes(System.IO.File.ReadAllText("dataSource/final.json"));
         }
 
         

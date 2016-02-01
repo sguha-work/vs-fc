@@ -1,6 +1,9 @@
-C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\fc-ve.csprojResolveAssemblyReference.cache
 C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\fc_ve.form_vbfc.resources
 C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\fc_ve.Properties.Resources.resources
 C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\fc-ve.csproj.GenerateResource.Cache
 C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.exe
 C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\obj\Debug\vs-fc.pdb
+C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.exe.config
+C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.exe
+C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\bin\Debug\vs-fc.pdb
+C:\Users\sahasrangshu.guha\Documents\Visual Studio 2012\Projects\vs-fc\vs-fc\bin\Debug\dataSource\final.json

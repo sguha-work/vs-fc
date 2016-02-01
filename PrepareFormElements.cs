@@ -15,8 +15,9 @@ namespace fc_ve
             dynamic chartData = commonObject.decodeJSON(chartDataJSON);
             foreach (dynamic item in chartData)
             {
-                // code here
+                
             }
+            return chartTypes;
         }
     }
 }
