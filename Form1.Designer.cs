@@ -1,6 +1,6 @@
 ﻿namespace fc_ve
 {
-    partial class form_vbfc
+    partial class form_fcve
     {
         /// <summary>
         /// Required designer variable.
@@ -185,7 +185,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attributes ( Select chart to see them )";
             // 
-            // form_vbfc
+            // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.webBrowser1);
             this.MaximizeBox = false;
-            this.Name = "form_vbfc";
+            this.Name = "form_fcve";
             this.Text = "FusionCharts-VisualEditor";
             this.Load += new System.EventHandler(this.form_vbfc_Load);
             this.groupBox1.ResumeLayout(false);

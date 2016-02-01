@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 namespace fc_ve
 {
-    public partial class form_vbfc : Form
+    public partial class form_fcve : Form
     {
-        public form_vbfc()
+        public form_fcve()
         {
             InitializeComponent();
         }

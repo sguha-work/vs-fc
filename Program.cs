@@ -16,7 +16,7 @@ namespace fc_ve
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_vbfc());
+            Application.Run(new form_fcve());
         }
     }
 }
