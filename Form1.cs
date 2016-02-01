@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace vs_fc
+using fc_ve.PrepareFormElements;
+namespace fc_ve
 {
     public partial class form_vbfc : Form
     {
@@ -17,7 +17,19 @@ namespace vs_fc
             InitializeComponent();
         }
 
+        private void form_vbfc_Load(object sender, EventArgs e)
+        {
+            this.initializeFormElements();
+        }
+
+        private void initializeFormElements()
+        {
+              cb_chartType.DataSource = fc_ve.PrepareFormElements.  
+        }
+
         
+
+       
 
         
     }

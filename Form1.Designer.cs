@@ -1,4 +1,4 @@
-﻿namespace vs_fc
+﻿namespace fc_ve
 {
     partial class form_vbfc
     {
@@ -40,7 +40,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_chartType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -167,13 +167,13 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Chart Type *";
             // 
-            // comboBox1
+            // cb_chartType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 247);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(399, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cb_chartType.FormattingEnabled = true;
+            this.cb_chartType.Location = new System.Drawing.Point(25, 247);
+            this.cb_chartType.Name = "cb_chartType";
+            this.cb_chartType.Size = new System.Drawing.Size(399, 21);
+            this.cb_chartType.TabIndex = 15;
             // 
             // groupBox2
             // 
@@ -190,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 620);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_chartType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
@@ -202,6 +202,7 @@
             this.MaximizeBox = false;
             this.Name = "form_vbfc";
             this.Text = "FusionCharts-VisualEditor";
+            this.Load += new System.EventHandler(this.form_vbfc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -223,7 +224,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_chartType;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }
