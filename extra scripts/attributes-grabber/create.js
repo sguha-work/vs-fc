@@ -45,7 +45,7 @@ readAndPrepareFileContent = (function(fileName) {
 			attributeIndex;
 
 		dataArray = JSON.parse(data);
-		attributes = [];
+		attributes = {};
 
 		for(typeIndex in dataArray) {
 			category = "";
@@ -85,7 +85,7 @@ readAndPrepareFileContent = (function(fileName) {
 					break;
 				}
 				dataArray[typeIndex].attrs[attributeIndex].formElementId = keyName + "_" + dataArray[typeIndex].attrs[attributeIndex].name;
-				attributes.push(dataArray[typeIndex].attrs[attributeIndex]);
+				attributes[attributeIndex] = dataArray[typeIndex].attrs[attributeIndex];
 			}
 
 		}
