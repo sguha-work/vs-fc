@@ -1,3 +1,13 @@
+/*
+
+open "http://www.fusioncharts.com/dev/chart-attributes.html", go to console and run the following script, it will print a JSON in console.
+*********************************************
+var data = {};$("a[data-chartname]").each(function(){data[$(this).attr('data-alias')]=$(this).attr('data-examplefile'); });console.log(JSON.stringify(data, null, 4));
+*********************************************
+
+copy the json
+
+*/
 var fs,
 	fileNamesArray,
 	numberOfAttributeFiles,
@@ -6,7 +16,8 @@ var fs,
 	finalFilePath,
 	readAndPrepareFileContent,
 	finalJSON,
-	interval;
+	interval,
+	fileNameObject;
 
 attributeDirectoryName = "attribute";
 finalFilePath = "final/final.json"
@@ -14,6 +25,10 @@ fs = require("fs");
 fileNamesArray = [];
 finalJSON = {};
 indexOfPresentFile = 0;
+
+fs.readFile("data-file-name.js", function(error, data) {
+	fileNameObject = JSON.parse(data);
+});
 
 // making the final file empty
 fs.writeFile(finalFilePath, "", function(error, data) {
@@ -89,7 +104,16 @@ readAndPrepareFileContent = (function(fileName) {
 			}
 
 		}
-		finalJSON[keyName] = attributes;
+		
+		fs.readFile("data/"+fileNameObject[keyName], function(error, data) {
+			attributes["data"] = {};
+			if(!error) {
+				attributes["data"]["JSON"] = JSON.stringify(data, null, 4);
+			} else {
+				attributes["data"]["JSON"] = "";
+			}
+			finalJSON[keyName] = attributes;
+		});
 	});
 });
 

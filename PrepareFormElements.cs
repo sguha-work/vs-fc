@@ -15,7 +15,11 @@ namespace fc_ve
             Dictionary<string, Dictionary<string, Dictionary<string, string>>> chartData = commonObject.decodeJSON(chartDataJSON);
             foreach (string chartType in chartData.Keys)
             {
-                chartTypes.Add(chartType.ToString().ToUpper());
+                if (chartData[chartType]["data"]["JSON"] != "")
+                {
+                    chartTypes.Add(chartType.ToString().ToUpper());
+                }
+                
             }
             return chartTypes;
         }

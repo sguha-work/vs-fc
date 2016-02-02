@@ -1,0 +1,18 @@
+{
+  "name": "attributes-grabber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "create.js",
+  "dependencies": {
+    "fs": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+      "fs": "2.14.7"
+  }
+}
