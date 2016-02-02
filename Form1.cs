@@ -29,6 +29,8 @@ namespace fc_ve
             cb_chartType.DataSource = p.prepareChartTypes(System.IO.File.ReadAllText("dataSource/final.json"));
         }
 
+       
+
         
 
        
