@@ -27,9 +27,16 @@ namespace fc_ve
         public Dictionary<string, Dictionary<string, Dictionary<string, string>>> decodeJSON(String jsonString)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
-            var data = ser.Deserialize<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(jsonString);
+            var data = ser.Deserialize<Dictionary<String, Dictionary<String, Dictionary<String, String>>>>(jsonString);
             //dynamic data = Json.Decode(jsonString);
             return data;
+        }
+
+        public String getChartData(String chartName, String data)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            var chartData = ser.Deserialize<Dictionary<String, Dictionary<String, Dictionary<String, String>>>>(data);
+            return chartData[chartName]["data"]["JSON"].ToString();
         }
     }
 }

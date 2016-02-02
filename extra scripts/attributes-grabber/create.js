@@ -108,7 +108,7 @@ readAndPrepareFileContent = (function(fileName) {
 		fs.readFile("data/"+fileNameObject[keyName], function(error, data) {
 			attributes["data"] = {};
 			if(!error) {
-				attributes["data"]["JSON"] = JSON.stringify(data, null, 4);
+				attributes["data"]["JSON"] = escape(data);
 			} else {
 				attributes["data"]["JSON"] = "";
 			}

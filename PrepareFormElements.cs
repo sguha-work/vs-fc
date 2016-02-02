@@ -23,5 +23,11 @@ namespace fc_ve
             }
             return chartTypes;
         }
+        public String getChartData(String chartName, String data)
+        { 
+            Common commonObject = Common.getInstance();
+            String chartData = commonObject.getChartData(chartName, data);
+            return Uri.UnescapeDataString(chartData).Replace("\n", Environment.NewLine);
+        }
     }
 }

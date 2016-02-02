@@ -40,9 +40,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.cb_chartType = new System.Windows.Forms.ComboBox();
+            this.cb_fcve_chart_type = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_fcve_json_data = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -174,14 +174,15 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Chart Type *";
             // 
-            // cb_chartType
+            // cb_fcve_chart_type
             // 
-            this.cb_chartType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_chartType.FormattingEnabled = true;
-            this.cb_chartType.Location = new System.Drawing.Point(22, 200);
-            this.cb_chartType.Name = "cb_chartType";
-            this.cb_chartType.Size = new System.Drawing.Size(399, 24);
-            this.cb_chartType.TabIndex = 15;
+            this.cb_fcve_chart_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_fcve_chart_type.FormattingEnabled = true;
+            this.cb_fcve_chart_type.Location = new System.Drawing.Point(22, 200);
+            this.cb_fcve_chart_type.Name = "cb_fcve_chart_type";
+            this.cb_fcve_chart_type.Size = new System.Drawing.Size(399, 24);
+            this.cb_fcve_chart_type.TabIndex = 15;
+            this.cb_fcve_chart_type.SelectionChangeCommitted += new System.EventHandler(this.cb_fcve_chart_type_SelectionChangeCommitted);
             // 
             // groupBox2
             // 
@@ -192,14 +193,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attributes ( Select chart to see them )";
             // 
-            // textBox3
+            // txt_fcve_json_data
             // 
-            this.textBox3.Location = new System.Drawing.Point(22, 430);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(484, 205);
-            this.textBox3.TabIndex = 17;
+            this.txt_fcve_json_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_fcve_json_data.Location = new System.Drawing.Point(22, 430);
+            this.txt_fcve_json_data.Multiline = true;
+            this.txt_fcve_json_data.Name = "txt_fcve_json_data";
+            this.txt_fcve_json_data.ReadOnly = true;
+            this.txt_fcve_json_data.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_fcve_json_data.Size = new System.Drawing.Size(484, 205);
+            this.txt_fcve_json_data.TabIndex = 17;
+            this.txt_fcve_json_data.WordWrap = false;
             // 
             // textBox4
             // 
@@ -260,9 +264,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_fcve_json_data);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.cb_chartType);
+            this.Controls.Add(this.cb_fcve_chart_type);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
@@ -296,9 +300,9 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cb_chartType;
+        private System.Windows.Forms.ComboBox cb_fcve_chart_type;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_fcve_json_data;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
