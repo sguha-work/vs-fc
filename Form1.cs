@@ -46,8 +46,9 @@ namespace fc_ve
 
         private void txt_fcve_json_data_TextChanged(object sender, EventArgs e)
         {
-            String dataForChart = txt_fcve_json_data.Text;
 
+            String dataForChart = txt_fcve_json_data.Text; 
+            wb_fcve_chart.DocumentText = object_prepareFormElements.getHTMLPageData(dataForChart, "chart-container", wb_fcve_chart.Width, wb_fcve_chart.Height);
         }
 
         /// <summary>

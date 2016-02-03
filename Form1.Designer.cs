@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.wb_fcve_chart = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -54,18 +54,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_width = new System.Windows.Forms.TextBox();
             this.txt_fcve_chart_height = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // wb_fcve_chart
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(457, 66);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(604, 370);
-            this.webBrowser1.TabIndex = 0;
+            this.wb_fcve_chart.Location = new System.Drawing.Point(457, 66);
+            this.wb_fcve_chart.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wb_fcve_chart.Name = "wb_fcve_chart";
+            this.wb_fcve_chart.ScriptErrorsSuppressed = true;
+            this.wb_fcve_chart.ScrollBarsEnabled = false;
+            this.wb_fcve_chart.Size = new System.Drawing.Size(604, 370);
+            this.wb_fcve_chart.TabIndex = 0;
             // 
             // label1
             // 
@@ -194,6 +198,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Location = new System.Drawing.Point(23, 657);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1032, 170);
@@ -321,6 +326,14 @@
             this.txt_fcve_chart_height.TabIndex = 28;
             this.txt_fcve_chart_height.Text = "20%";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(84, 47);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(637, 100);
+            this.textBox3.TabIndex = 0;
+            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,13 +360,15 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.wb_fcve_chart);
             this.MaximizeBox = false;
             this.Name = "form_fcve";
             this.Text = "FusionCharts-VisualEditor";
             this.Load += new System.EventHandler(this.form_vbfc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).EndInit();
             this.ResumeLayout(false);
@@ -363,7 +378,7 @@
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser wb_fcve_chart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -389,6 +404,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_fcve_chart_width;
         private System.Windows.Forms.TextBox txt_fcve_chart_height;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

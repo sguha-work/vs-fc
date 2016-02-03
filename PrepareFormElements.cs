@@ -11,8 +11,8 @@ namespace fc_ve
         public List<String> prepareChartTypes(String chartDataJSON)
         {
             List<String> chartTypes = new List<String>();
-            Common commonObject = Common.getInstance();
-            Dictionary<string, Dictionary<string, Dictionary<string, string>>> chartData = commonObject.decodeJSON(chartDataJSON);
+            Common object_common = Common.getInstance();
+            Dictionary<string, Dictionary<string, Dictionary<string, string>>> chartData = object_common.decodeJSON(chartDataJSON);
             foreach (string chartType in chartData.Keys)
             {
                 if (chartData[chartType]["data"]["JSON"] != "")
@@ -24,10 +24,16 @@ namespace fc_ve
             return chartTypes;
         }
         public String getChartData(String chartName, String data)
-        { 
-            Common commonObject = Common.getInstance();
-            String chartData = commonObject.getChartData(chartName, data);
+        {
+            Common object_common = Common.getInstance();
+            String chartData = object_common.getChartData(chartName, data);
             return Uri.UnescapeDataString(chartData).Replace("\n", Environment.NewLine);
+        }
+        public String getHTMLPageData(String chartData, String chartContainer, int width, int height)
+        {
+            Common object_common = Common.getInstance();
+            String htmlData = object_common.prepareHTMLDataFromChartData(chartData, chartContainer, width, height);
+            return htmlData;
         }
     }
 }
