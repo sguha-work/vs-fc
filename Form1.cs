@@ -26,11 +26,15 @@ namespace fc_ve
 
         private void initializeFormElements()
         {
-
+            // Loads the chart types from data source
             cb_fcve_chart_type.DataSource = object_prepareFormElements.prepareChartTypes(System.IO.File.ReadAllText("dataSource/final.json"));
         }
 
-        
+        /// <summary>
+        /// Called when chart type is changed and load the data for the chart from data source
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cb_fcve_chart_type_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int selectedIndex = cb_fcve_chart_type.SelectedIndex;
@@ -40,7 +44,35 @@ namespace fc_ve
             
         }
 
-       
+        private void txt_fcve_json_data_TextChanged(object sender, EventArgs e)
+        {
+            String dataForChart = txt_fcve_json_data.Text;
+
+        }
+
+        /// <summary>
+        /// Show the updated width value to the text box txt_fcve_chart_width
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tb_fcve_chart_width_Scroll(object sender, EventArgs e)
+        {
+            int chartWidth = tb_fcve_chart_width.Value;
+            txt_fcve_chart_width.Text = chartWidth.ToString() + "%";
+        }
+
+        /// <summary>
+        /// Show the updated width value to the text box txt_fcve_chart_height 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tb_fcve_chart_height_Scroll(object sender, EventArgs e)
+        {
+            int chartHeight = tb_fcve_chart_height.Value;
+            txt_fcve_chart_height.Text = chartHeight.ToString() + "%";
+        }
+
+        
 
         
 
