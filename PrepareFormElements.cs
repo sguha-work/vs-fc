@@ -49,5 +49,13 @@ namespace fc_ve
             String htmlData = object_common.prepareHTMLDataFromChartData(chartData, chartContainer, width, height);
             return htmlData;
         }
+
+        public String getChartInfo(String info, String chartType, String data)
+        {
+            String infoFromChart = "";
+            Common object_common = Common.getInstance();
+            infoFromChart = object_common.getChartInfo(info, chartType, data);
+            return infoFromChart;
+        }
     }
 }

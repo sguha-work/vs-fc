@@ -31,8 +31,6 @@
             this.wb_fcve_chart = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_name = new System.Windows.Forms.TextBox();
-            this.txt_fcve_chart_caption = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -55,6 +53,8 @@
             this.txt_fcve_chart_width = new System.Windows.Forms.TextBox();
             this.txt_fcve_chart_height = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_fcve_chart_caption = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
@@ -87,23 +87,7 @@
             this.txt_fcve_chart_name.Name = "txt_fcve_chart_name";
             this.txt_fcve_chart_name.Size = new System.Drawing.Size(427, 20);
             this.txt_fcve_chart_name.TabIndex = 2;
-            // 
-            // txt_fcve_chart_caption
-            // 
-            this.txt_fcve_chart_caption.Location = new System.Drawing.Point(21, 141);
-            this.txt_fcve_chart_caption.Name = "txt_fcve_chart_caption";
-            this.txt_fcve_chart_caption.Size = new System.Drawing.Size(429, 20);
-            this.txt_fcve_chart_caption.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Chart Caption *";
+            this.txt_fcve_chart_name.Text = "my-chart";
             // 
             // label5
             // 
@@ -334,6 +318,23 @@
             this.textBox3.Size = new System.Drawing.Size(637, 100);
             this.textBox3.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Chart Caption *";
+            // 
+            // txt_fcve_chart_caption
+            // 
+            this.txt_fcve_chart_caption.Location = new System.Drawing.Point(21, 141);
+            this.txt_fcve_chart_caption.Name = "txt_fcve_chart_caption";
+            this.txt_fcve_chart_caption.Size = new System.Drawing.Size(429, 20);
+            this.txt_fcve_chart_caption.TabIndex = 4;
+            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,8 +382,6 @@
         private System.Windows.Forms.WebBrowser wb_fcve_chart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_fcve_chart_name;
-        private System.Windows.Forms.TextBox txt_fcve_chart_caption;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton4;
@@ -405,6 +404,8 @@
         private System.Windows.Forms.TextBox txt_fcve_chart_width;
         private System.Windows.Forms.TextBox txt_fcve_chart_height;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_fcve_chart_caption;
     }
 }
 

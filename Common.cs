@@ -38,17 +38,19 @@ namespace fc_ve
             return data;
         }
 
+       
+
         /// <summary>
         /// Filetr the chart specific data from chartName and total chartData
         /// </summary>
-        /// <param name="chartName"></param>
+        /// <param name="chartType"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public String getChartData(String chartName, String data)
+        public String getChartData(String chartType, String data)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
             var chartData = ser.Deserialize<Dictionary<String, Dictionary<String, Dictionary<String, String>>>>(data);
-            return chartData[chartName]["data"]["JSON"].ToString();
+            return chartData[chartType]["data"]["JSON"].ToString();
         }
 
         /// <summary>
@@ -83,6 +85,20 @@ namespace fc_ve
             // preparing the final out put html
             htmlToDisplay += fcScriptLink + "</head><body>" + container + chartCode + "</body></html>";
             return htmlToDisplay;
+        }
+
+        public String getChartInfo(String info, String chartType, String data)
+        {
+            String infoFromChart = "";
+            String chartData = Uri.UnescapeDataString(getChartData(chartType, data));
+            Chart object_chart = Chart.getInstance();
+            switch (info)
+            { 
+                case "caption":
+                    infoFromChart = object_chart.getChartCaption(chartData);
+                break;
+            }
+            return infoFromChart;
         }
     }
 }
