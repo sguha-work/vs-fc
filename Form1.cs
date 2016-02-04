@@ -28,6 +28,9 @@ namespace fc_ve
         {
             // Loads the chart types from data source
             cb_fcve_chart_type.DataSource = object_prepareFormElements.prepareChartTypes(System.IO.File.ReadAllText("dataSource/final.json"));
+            Object selectedItem = cb_fcve_chart_type.SelectedItem;
+            String chartType = selectedItem.ToString().ToLower();
+            txt_fcve_json_data.Text = object_prepareFormElements.getChartData(chartType, System.IO.File.ReadAllText("dataSource/final.json"));
         }
 
         /// <summary>
@@ -48,7 +51,7 @@ namespace fc_ve
         {
 
             String dataForChart = txt_fcve_json_data.Text; 
-            wb_fcve_chart.DocumentText = object_prepareFormElements.getHTMLPageData(dataForChart, "chart-container", wb_fcve_chart.Width, wb_fcve_chart.Height);
+            wb_fcve_chart.DocumentText = object_prepareFormElements.getHTMLPageData(dataForChart, "chart-container", (wb_fcve_chart.Width-5), (wb_fcve_chart.Height-5));
         }
 
         /// <summary>

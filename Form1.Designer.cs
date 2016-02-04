@@ -30,8 +30,8 @@
         {
             this.wb_fcve_chart = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_fcve_chart_name = new System.Windows.Forms.TextBox();
+            this.txt_fcve_chart_caption = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -81,19 +81,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Chart Name *";
             // 
-            // textBox1
+            // txt_fcve_chart_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 20);
-            this.textBox1.TabIndex = 2;
+            this.txt_fcve_chart_name.Location = new System.Drawing.Point(23, 93);
+            this.txt_fcve_chart_name.Name = "txt_fcve_chart_name";
+            this.txt_fcve_chart_name.Size = new System.Drawing.Size(427, 20);
+            this.txt_fcve_chart_name.TabIndex = 2;
             // 
-            // textBox2
+            // txt_fcve_chart_caption
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(429, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_fcve_chart_caption.Location = new System.Drawing.Point(21, 141);
+            this.txt_fcve_chart_caption.Name = "txt_fcve_chart_caption";
+            this.txt_fcve_chart_caption.Size = new System.Drawing.Size(429, 20);
+            this.txt_fcve_chart_caption.TabIndex = 4;
             // 
             // label2
             // 
@@ -357,8 +357,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_fcve_chart_caption);
+            this.Controls.Add(this.txt_fcve_chart_name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.wb_fcve_chart);
             this.MaximizeBox = false;
@@ -380,8 +380,8 @@
 
         private System.Windows.Forms.WebBrowser wb_fcve_chart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_fcve_chart_name;
+        private System.Windows.Forms.TextBox txt_fcve_chart_caption;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -8,6 +8,11 @@ namespace fc_ve
 {
     class PrepareFormElements
     {
+        /// <summary>
+        /// Prepare the chart types
+        /// </summary>
+        /// <param name="chartDataJSON"></param>
+        /// <returns></returns>
         public List<String> prepareChartTypes(String chartDataJSON)
         {
             List<String> chartTypes = new List<String>();
@@ -29,6 +34,15 @@ namespace fc_ve
             String chartData = object_common.getChartData(chartName, data);
             return Uri.UnescapeDataString(chartData).Replace("\n", Environment.NewLine);
         }
+
+        /// <summary>
+        /// Call common function to get HTML content
+        /// </summary>
+        /// <param name="chartData"></param>
+        /// <param name="chartContainer"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public String getHTMLPageData(String chartData, String chartContainer, int width, int height)
         {
             Common object_common = Common.getInstance();
