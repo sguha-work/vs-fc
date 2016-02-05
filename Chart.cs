@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace fc_ve
 {
@@ -108,90 +109,23 @@ namespace fc_ve
         /// <returns></returns>
         public String getChartWidthHeight(String chartData)
         {
-            chartData = chartData.Replace("'","\"");
+            
             String [] widthHeight= new String [2];
-            {
-                Int32 indexOfWidth = chartData.ToLower().IndexOf("width:");
-                if (indexOfWidth == -1)
-                {
-                    widthHeight[0] = "";
-                    widthHeight[1] = "";
-                    
-                }
-                else
-                {
-                    Int32 index = indexOfWidth;
-                    while (chartData[index] != ':')
-                    {
-                        index++;
-                    }
-                    index += 1;
-                    while (chartData[index] != '"')
-                    {
-                        index++;
-                    }
-                    index += 1;
-                    while (chartData[index] != '"')
-                    {
-                        widthHeight[0] += chartData[index];
-                        index++;
-                    }
-               
-                }
-            }
-            {
-                Int32 indexOfHeight = chartData.ToLower().IndexOf("height:");
-                if (indexOfHeight == -1)
-                {
-                    widthHeight[0] = "";
-                    widthHeight[1] = "";
-                    
-                }
-                else
-                {
-                    Int32 index = indexOfHeight;
-                    while (chartData[index] != ':')
-                    {
-                        index++;
-                    }
-                    index += 1;
-                    while (chartData[index] != '"')
-                    {
-                        index++;
-                    }
-                    index += 1;
-                    while (chartData[index] != '"')
-                    {
-                        widthHeight[1] += chartData[index];
-                        index++;
-                    }
-
-                }
-            }
-
+            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            var data = ser.Deserialize<Dictionary<String, object>>(chartData);
+            widthHeight[0] = data["width"].ToString();
+            widthHeight[1] = data["height"].ToString();
 
             return String.Join(",", widthHeight);
 
         }
 
-        public String setChartWidthHeight(String chartData, Int32 width, Int32 height, Boolean isWidthChanged, Boolean isHeightChanged) 
+        public String setChartWidthHeight(String chartData, String width, String height) 
         {
-            Char[] newChartData = new Char[chartData.Length];
-            
-            {
-                Int32 indexOfWidth = chartData.ToLower().IndexOf("width:");
-                Int32 index, flag = 0;
-                for (index = 0; index < chartData.Length; index++ )
-                {
-                    if (index <= indexOfWidth+6)
-                    {
-                        newChartData[index] = chartData[index];
-                    }
-
-                }
-                
-            }
-            return chartData;
+            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            var data = ser.Deserialize<Dictionary<String, object>>(chartData);
+            return data["width"].ToString();
+            //return chartData;
         }
     }
 }

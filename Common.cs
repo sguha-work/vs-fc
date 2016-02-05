@@ -107,5 +107,11 @@ namespace fc_ve
             }
             return infoFromChart;
         }
+
+        public String setChartWidthHeight(String chartData, String width, String height)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartWidthHeight(chartData, width, height);
+        }
     }
 }

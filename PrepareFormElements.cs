@@ -57,5 +57,11 @@ namespace fc_ve
             infoFromChart = object_common.getChartInfo(info, chartType, data);
             return infoFromChart;
         }
+
+        public String setChartWidthHeight(String chartData, String width, String height)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartWidthHeight(chartData, width, height);
+        }
     }
 }
