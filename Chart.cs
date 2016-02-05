@@ -63,6 +63,8 @@ namespace fc_ve
             
         }
 
+
+
         /// <summary>
         /// Fetch out chart sub caption
         /// </summary>
@@ -109,7 +111,7 @@ namespace fc_ve
             chartData = chartData.Replace("'","\"");
             String [] widthHeight= new String [2];
             {
-                Int32 indexOfWidth = chartData.ToLower().IndexOf("width");
+                Int32 indexOfWidth = chartData.ToLower().IndexOf("width:");
                 if (indexOfWidth == -1)
                 {
                     widthHeight[0] = "";
@@ -138,7 +140,7 @@ namespace fc_ve
                 }
             }
             {
-                Int32 indexOfHeight = chartData.ToLower().IndexOf("height");
+                Int32 indexOfHeight = chartData.ToLower().IndexOf("height:");
                 if (indexOfHeight == -1)
                 {
                     widthHeight[0] = "";
@@ -170,6 +172,26 @@ namespace fc_ve
 
             return String.Join(",", widthHeight);
 
+        }
+
+        public String setChartWidthHeight(String chartData, Int32 width, Int32 height, Boolean isWidthChanged, Boolean isHeightChanged) 
+        {
+            Char[] newChartData = new Char[chartData.Length];
+            
+            {
+                Int32 indexOfWidth = chartData.ToLower().IndexOf("width:");
+                Int32 index, flag = 0;
+                for (index = 0; index < chartData.Length; index++ )
+                {
+                    if (index <= indexOfWidth+6)
+                    {
+                        newChartData[index] = chartData[index];
+                    }
+
+                }
+                
+            }
+            return chartData;
         }
     }
 }
