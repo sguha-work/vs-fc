@@ -30,11 +30,10 @@ namespace fc_ve
         /// </summary>
         /// <param name="jsonString"></param>
         /// <returns></returns>
-        public Dictionary<string, Dictionary<string, Dictionary<string, string>>> decodeJSON(String jsonString)
+        public Dictionary<string, Dictionary<string, Dictionary<String, String>>> decodeJSON(String jsonString)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
             var data = ser.Deserialize<Dictionary<String, Dictionary<String, Dictionary<String, String>>>>(jsonString);
-            //dynamic data = Json.Decode(jsonString);
             return data;
         }
 
@@ -96,6 +95,14 @@ namespace fc_ve
             { 
                 case "caption":
                     infoFromChart = object_chart.getChartCaption(chartData);
+                break;
+                
+                case "subCaption":
+                infoFromChart = object_chart.getChartSubCaption(chartData);
+                break;
+
+                case "widthheight":
+                infoFromChart = object_chart.getChartWidthHeight(chartData);
                 break;
             }
             return infoFromChart;

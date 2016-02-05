@@ -32,13 +32,27 @@ namespace fc_ve
             startLoadingTheChart(selectedItem);
         }
 
-        public void startLoadingTheChart(Object selectedItem) 
+        public void startLoadingTheChart(Object selectedItem)
         {
             String chartType = selectedItem.ToString().ToLower();
             txt_fcve_json_data.Text = object_prepareFormElements.getChartData(chartType, System.IO.File.ReadAllText("dataSource/final.json"));
 
-            // setting chart caption
+            // setting chart caption to text box
             txt_fcve_chart_caption.Text = object_prepareFormElements.getChartInfo("caption", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
+
+            // setting chart sub caption to text box
+            txt_fcve_chart_sub_caption.Text = object_prepareFormElements.getChartInfo("subCaption", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
+
+            //setting chart width height to text box
+            String widthHeight = object_prepareFormElements.getChartInfo("widthheight", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
+            Int32 width = Convert.ToInt32(widthHeight.Split(',')[0].Split('%')[0]);
+            Int32 height = Convert.ToInt32(widthHeight.Split(',')[1].Split('%')[0]);
+            tb_fcve_chart_width.Value = width;
+            tb_fcve_chart_height.Value = height;
+            txt_fcve_chart_width.Text = width.ToString() + "%";
+            txt_fcve_chart_height.Text = height.ToString() + "%";
+
+
         }
 
         /// <summary>
