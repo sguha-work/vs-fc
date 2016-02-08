@@ -118,7 +118,7 @@ namespace fc_ve
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
             obj.width = width;
             obj.height = height;
-            return JsonConvert.SerializeObject(obj);
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
     }
 }
