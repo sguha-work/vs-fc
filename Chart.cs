@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-
+using Newtonsoft.Json;
 namespace fc_ve
 {
     class Chart
@@ -74,32 +74,27 @@ namespace fc_ve
         public String getChartSubCaption(String chartData)
         {
             String chartSubCaption = null;
-            Int32 indexOfSubCaption = chartData.ToLower().IndexOf("\"subcaption");
-            if (indexOfSubCaption == -1)
+            try
             {
-                return chartSubCaption;
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+                if (obj.dataSource.chart.subCaption != null)
+                {
+                    chartSubCaption = obj.dataSource.chart.subCaption.Value;
+                }
+                else if (obj.dataSource.chart.subcaption != null)
+                {
+                    chartSubCaption = obj.dataSource.chart.subcaption.Value;
+                }
+                else
+                {
+                    chartSubCaption = "";
+                }
             }
-            else
+            catch (Exception e)
             {
-                Int32 index = indexOfSubCaption;
-                while (chartData[index] != ':')
-                {
-                    index++;
-                }
-                index += 1;
-                while (chartData[index] != '"')
-                {
-                    index++;
-                }
-                index += 1;
-                while (chartData[index] != '"')
-                {
-                    chartSubCaption += chartData[index];
-                    index++;
-                }
-                return chartSubCaption;
+                chartSubCaption = "";
             }
-
+            return chartSubCaption;
         }
 
         /// <summary>
@@ -111,11 +106,13 @@ namespace fc_ve
         {
             
             String [] widthHeight= new String [2];
-            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
-            var data = ser.Deserialize<Dictionary<String, object>>(chartData);
-            widthHeight[0] = data["width"].ToString();
-            widthHeight[1] = data["height"].ToString();
-
+            //JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            //var data = ser.Deserialize<Dictionary<String, object>>(chartData);
+            //widthHeight[0] = data["width"].ToString();
+            //widthHeight[1] = data["height"].ToString();
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            widthHeight[0] = obj.width;
+            widthHeight[1] = obj.height;
             return String.Join(",", widthHeight);
 
         }
@@ -125,7 +122,6 @@ namespace fc_ve
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
             var data = ser.Deserialize<Dictionary<String, object>>(chartData);
             return data["width"].ToString();
-            //return chartData;
         }
     }
 }
