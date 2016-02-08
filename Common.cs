@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Xml;
+using Newtonsoft.Json;
+using System.Xml;
 namespace fc_ve
 {
     class Common
@@ -112,6 +115,14 @@ namespace fc_ve
         {
             Chart object_chart = Chart.getInstance();
             return object_chart.setChartWidthHeight(chartData, width, height);
+        }
+
+        public String convertJSONToXML(String jsonData)
+        {
+            String xmlData = "";
+            //System.Xml. = JsonConvert.DeserializeXNode(jsonData);
+                           
+            return xmlData;
         }
     }
 }

@@ -104,7 +104,6 @@ namespace fc_ve
         /// <returns></returns>
         public String getChartWidthHeight(String chartData)
         {
-            
             String [] widthHeight= new String [2];
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
             widthHeight[0] = obj.width;
@@ -113,6 +112,13 @@ namespace fc_ve
 
         }
 
+        /// <summary>
+        /// Set the new height width of chart and return the new JSON data with modified height width
+        /// </summary>
+        /// <param name="chartData"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public String setChartWidthHeight(String chartData, String width, String height) 
         {
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
