@@ -106,10 +106,6 @@ namespace fc_ve
         {
             
             String [] widthHeight= new String [2];
-            //JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
-            //var data = ser.Deserialize<Dictionary<String, object>>(chartData);
-            //widthHeight[0] = data["width"].ToString();
-            //widthHeight[1] = data["height"].ToString();
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
             widthHeight[0] = obj.width;
             widthHeight[1] = obj.height;
@@ -119,9 +115,10 @@ namespace fc_ve
 
         public String setChartWidthHeight(String chartData, String width, String height) 
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
-            var data = ser.Deserialize<Dictionary<String, object>>(chartData);
-            return data["width"].ToString();
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.width = width;
+            obj.height = height;
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

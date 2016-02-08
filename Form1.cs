@@ -84,7 +84,7 @@ namespace fc_ve
         {
             int chartWidth = tb_fcve_chart_width.Value;
             txt_fcve_chart_width.Text = chartWidth.ToString() + "%";
-            MessageBox.Show(object_prepareFormElements.setChartWidthHeight(txt_fcve_json_data.Text, txt_fcve_chart_width.Text, txt_fcve_chart_height.Text));
+            
         }
 
         /// <summary>
@@ -96,6 +96,16 @@ namespace fc_ve
         {
             int chartHeight = tb_fcve_chart_height.Value;
             txt_fcve_chart_height.Text = chartHeight.ToString() + "%";
+        }
+
+        private void tb_fcve_chart_width_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt_fcve_json_data.Text = object_prepareFormElements.setChartWidthHeight(txt_fcve_json_data.Text, txt_fcve_chart_width.Text, txt_fcve_chart_height.Text);
+        }
+
+        private void tb_fcve_chart_height_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt_fcve_json_data.Text = object_prepareFormElements.setChartWidthHeight(txt_fcve_json_data.Text, txt_fcve_chart_width.Text, txt_fcve_chart_height.Text);
         }
 
         

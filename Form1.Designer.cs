@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cb_fcve_chart_type = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.txt_fcve_json_data = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_width = new System.Windows.Forms.TextBox();
             this.txt_fcve_chart_height = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_caption = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -172,6 +172,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attributes ( Select chart to see them )";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(84, 47);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(637, 100);
+            this.textBox3.TabIndex = 0;
+            // 
             // txt_fcve_json_data
             // 
             this.txt_fcve_json_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,6 +261,7 @@
             this.tb_fcve_chart_width.TabIndex = 24;
             this.tb_fcve_chart_width.Value = 20;
             this.tb_fcve_chart_width.Scroll += new System.EventHandler(this.tb_fcve_chart_width_Scroll);
+            this.tb_fcve_chart_width.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tb_fcve_chart_width_MouseUp);
             // 
             // tb_fcve_chart_height
             // 
@@ -263,6 +272,7 @@
             this.tb_fcve_chart_height.TabIndex = 26;
             this.tb_fcve_chart_height.Value = 20;
             this.tb_fcve_chart_height.Scroll += new System.EventHandler(this.tb_fcve_chart_height_Scroll);
+            this.tb_fcve_chart_height.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tb_fcve_chart_height_MouseUp);
             // 
             // label9
             // 
@@ -291,14 +301,6 @@
             this.txt_fcve_chart_height.Size = new System.Drawing.Size(39, 20);
             this.txt_fcve_chart_height.TabIndex = 28;
             this.txt_fcve_chart_height.Text = "20%";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(84, 47);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(637, 100);
-            this.textBox3.TabIndex = 0;
             // 
             // label2
             // 
