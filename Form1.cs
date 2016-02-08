@@ -70,9 +70,12 @@ namespace fc_ve
 
         private void txt_fcve_json_data_TextChanged(object sender, EventArgs e)
         {
-            
+            // loading the chart
             String dataForChart = txt_fcve_json_data.Text; 
             wb_fcve_chart.DocumentText = object_prepareFormElements.getHTMLPageData(dataForChart, "chart-container", (wb_fcve_chart.Width-10), (wb_fcve_chart.Height-10));
+
+            // converting JSON data to XML
+            txt_fcve_xml_data.Text = object_prepareFormElements.convertJSONToXML(txt_fcve_json_data.Text.ToString());
         }
 
         /// <summary>

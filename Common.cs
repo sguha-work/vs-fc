@@ -7,6 +7,7 @@ using System.Web.Script.Serialization;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Xml;
+using System.Xml.Linq;
 namespace fc_ve
 {
     class Common
@@ -119,10 +120,9 @@ namespace fc_ve
 
         public String convertJSONToXML(String jsonData)
         {
-            String xmlData = "";
-            //System.Xml. = JsonConvert.DeserializeXNode(jsonData);
-                           
-            return xmlData;
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(jsonData);
+            XDocument xdoc = JsonConvert.DeserializeXNode(JsonConvert.SerializeObject(obj.dataSource), "chart");              
+            return xdoc.ToString();
         }
     }
 }

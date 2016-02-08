@@ -40,7 +40,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txt_fcve_json_data = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_fcve_xml_data = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -193,14 +193,14 @@
             this.txt_fcve_json_data.WordWrap = false;
             this.txt_fcve_json_data.TextChanged += new System.EventHandler(this.txt_fcve_json_data_TextChanged);
             // 
-            // textBox4
+            // txt_fcve_xml_data
             // 
-            this.textBox4.Location = new System.Drawing.Point(582, 442);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(475, 205);
-            this.textBox4.TabIndex = 18;
+            this.txt_fcve_xml_data.Location = new System.Drawing.Point(582, 442);
+            this.txt_fcve_xml_data.Multiline = true;
+            this.txt_fcve_xml_data.Name = "txt_fcve_xml_data";
+            this.txt_fcve_xml_data.ReadOnly = true;
+            this.txt_fcve_xml_data.Size = new System.Drawing.Size(475, 205);
+            this.txt_fcve_xml_data.TabIndex = 18;
             // 
             // label4
             // 
@@ -356,7 +356,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_fcve_xml_data);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cb_fcve_chart_type);
             this.Controls.Add(this.label3);
@@ -393,7 +393,7 @@
         private System.Windows.Forms.ComboBox cb_fcve_chart_type;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_fcve_json_data;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_fcve_xml_data;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

@@ -63,5 +63,11 @@ namespace fc_ve
             Common object_common = Common.getInstance();
             return object_common.setChartWidthHeight(chartData, width, height);
         }
+
+        public String convertJSONToXML(String jsonData)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.convertJSONToXML(jsonData);
+        }
     }
 }
