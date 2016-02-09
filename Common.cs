@@ -102,11 +102,19 @@ namespace fc_ve
                 break;
                 
                 case "subCaption":
-                infoFromChart = object_chart.getChartSubCaption(chartData);
+                    infoFromChart = object_chart.getChartSubCaption(chartData);
                 break;
 
                 case "widthheight":
-                infoFromChart = object_chart.getChartWidthHeight(chartData);
+                    infoFromChart = object_chart.getChartWidthHeight(chartData);
+                break;
+                
+                case "xAxisName":
+                infoFromChart = object_chart.getChartXAxisName(chartData);
+                break;
+
+                case "yAxisName":
+                infoFromChart = object_chart.getChartYAxisName(chartData);
                 break;
             }
             return infoFromChart;
@@ -130,5 +138,7 @@ namespace fc_ve
             Chart object_chart = Chart.getInstance();
             return object_chart.setChartCaption(chartData, caption);
         }
+
+        
     }
 }

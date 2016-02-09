@@ -37,8 +37,6 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_fcve_chart_type = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.txt_fcve_json_data = new System.Windows.Forms.TextBox();
             this.txt_fcve_xml_data = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,8 +53,11 @@
             this.txt_fcve_chart_caption = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_sub_caption = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_fcve_chart_xaxis_name = new System.Windows.Forms.TextBox();
+            this.txt_fcve_chart_yaxis_name = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 302);
+            this.label5.Location = new System.Drawing.Point(17, 443);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 10;
@@ -87,10 +88,10 @@
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 322);
+            this.groupBox1.Location = new System.Drawing.Point(20, 463);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(402, 86);
+            this.groupBox1.Size = new System.Drawing.Size(427, 55);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -98,7 +99,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(29, 50);
+            this.radioButton4.Location = new System.Drawing.Point(225, 23);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(95, 21);
             this.radioButton4.TabIndex = 3;
@@ -122,7 +123,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(148, 50);
+            this.radioButton2.Location = new System.Drawing.Point(341, 19);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(86, 21);
             this.radioButton2.TabIndex = 1;
@@ -162,28 +163,10 @@
             this.cb_fcve_chart_type.TabIndex = 15;
             this.cb_fcve_chart_type.SelectionChangeCommitted += new System.EventHandler(this.cb_fcve_chart_type_SelectionChangeCommitted);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Location = new System.Drawing.Point(23, 657);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1032, 170);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Attributes ( Select chart to see them )";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(84, 47);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(637, 100);
-            this.textBox3.TabIndex = 0;
-            // 
             // txt_fcve_json_data
             // 
             this.txt_fcve_json_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fcve_json_data.Location = new System.Drawing.Point(21, 446);
+            this.txt_fcve_json_data.Location = new System.Drawing.Point(21, 609);
             this.txt_fcve_json_data.Multiline = true;
             this.txt_fcve_json_data.Name = "txt_fcve_json_data";
             this.txt_fcve_json_data.ReadOnly = true;
@@ -195,7 +178,7 @@
             // 
             // txt_fcve_xml_data
             // 
-            this.txt_fcve_xml_data.Location = new System.Drawing.Point(582, 442);
+            this.txt_fcve_xml_data.Location = new System.Drawing.Point(582, 605);
             this.txt_fcve_xml_data.Multiline = true;
             this.txt_fcve_xml_data.Name = "txt_fcve_xml_data";
             this.txt_fcve_xml_data.ReadOnly = true;
@@ -206,7 +189,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(526, 499);
+            this.label4.Location = new System.Drawing.Point(526, 662);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 19;
@@ -216,7 +199,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(512, 538);
+            this.label6.Location = new System.Drawing.Point(512, 701);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 20;
@@ -227,7 +210,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(516, 569);
+            this.label7.Location = new System.Drawing.Point(516, 732);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 21;
@@ -236,7 +219,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(22, 416);
+            this.textBox5.Location = new System.Drawing.Point(19, 535);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(428, 20);
             this.textBox5.TabIndex = 22;
@@ -339,11 +322,51 @@
             this.txt_fcve_chart_sub_caption.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_sub_caption.TabIndex = 29;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(18, 299);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 20);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "X Axis Name *";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(20, 362);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 20);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Y Axis Name *";
+            // 
+            // txt_fcve_chart_xaxis_name
+            // 
+            this.txt_fcve_chart_xaxis_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_fcve_chart_xaxis_name.Location = new System.Drawing.Point(19, 322);
+            this.txt_fcve_chart_xaxis_name.Name = "txt_fcve_chart_xaxis_name";
+            this.txt_fcve_chart_xaxis_name.Size = new System.Drawing.Size(429, 23);
+            this.txt_fcve_chart_xaxis_name.TabIndex = 35;
+            // 
+            // txt_fcve_chart_yaxis_name
+            // 
+            this.txt_fcve_chart_yaxis_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_fcve_chart_yaxis_name.Location = new System.Drawing.Point(19, 398);
+            this.txt_fcve_chart_yaxis_name.Name = "txt_fcve_chart_yaxis_name";
+            this.txt_fcve_chart_yaxis_name.Size = new System.Drawing.Size(429, 23);
+            this.txt_fcve_chart_yaxis_name.TabIndex = 36;
+            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 836);
+            this.Controls.Add(this.txt_fcve_chart_yaxis_name);
+            this.Controls.Add(this.txt_fcve_chart_xaxis_name);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_fcve_chart_sub_caption);
             this.Controls.Add(this.txt_fcve_chart_height);
@@ -358,7 +381,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_fcve_xml_data);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cb_fcve_chart_type);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
@@ -372,8 +394,6 @@
             this.Load += new System.EventHandler(this.form_vbfc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).EndInit();
             this.ResumeLayout(false);
@@ -392,7 +412,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_fcve_chart_type;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_fcve_json_data;
         private System.Windows.Forms.TextBox txt_fcve_xml_data;
         private System.Windows.Forms.Label label4;
@@ -405,11 +424,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_fcve_chart_width;
         private System.Windows.Forms.TextBox txt_fcve_chart_height;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_fcve_chart_caption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_fcve_chart_sub_caption;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_fcve_chart_xaxis_name;
+        private System.Windows.Forms.TextBox txt_fcve_chart_yaxis_name;
     }
 }
 

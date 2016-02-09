@@ -133,5 +133,57 @@ namespace fc_ve
             obj.dataSource.chart.caption = caption;
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
+
+        public String getChartXAxisName(String chartData)
+        {
+            String chartXAxisName = null;
+            try
+            {
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+                if (obj.dataSource.chart.subCaption != null)
+                {
+                    chartXAxisName = obj.dataSource.chart.xAxisName.Value;
+                }
+                else if (obj.dataSource.chart.subcaption != null)
+                {
+                    chartXAxisName = obj.dataSource.chart.xAxisName.Value;
+                }
+                else
+                {
+                    chartXAxisName = "";
+                }
+            }
+            catch (Exception e)
+            {
+                chartXAxisName = "";
+            }
+            return chartXAxisName;
+        }
+
+        public String getChartYAxisName(String chartData)
+        {
+            String chartYAxisName = null;
+            try
+            {
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+                if (obj.dataSource.chart.subCaption != null)
+                {
+                    chartYAxisName = obj.dataSource.chart.yAxisName.Value;
+                }
+                else if (obj.dataSource.chart.subcaption != null)
+                {
+                    chartYAxisName = obj.dataSource.chart.yAxisName.Value;
+                }
+                else
+                {
+                    chartYAxisName = "";
+                }
+            }
+            catch (Exception e)
+            {
+                chartYAxisName = "";
+            }
+            return chartYAxisName;
+        }
     }
 }

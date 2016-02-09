@@ -52,7 +52,13 @@ namespace fc_ve
             txt_fcve_chart_width.Text = width.ToString() + "%";
             txt_fcve_chart_height.Text = height.ToString() + "%";
 
+            // setting chart xAxisName
+            String chartXAxisName = object_prepareFormElements.getChartInfo("xAxisName", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
+            txt_fcve_chart_xaxis_name.Text = chartXAxisName;
 
+            // setting chart yAxisName
+            String chartYAxisName = object_prepareFormElements.getChartInfo("yAxisName", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
+            txt_fcve_chart_yaxis_name.Text = chartYAxisName;
         }
 
         /// <summary>
