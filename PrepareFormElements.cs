@@ -76,6 +76,24 @@ namespace fc_ve
             return object_common.setChartCaption(chartData, caption);
         }
 
+        public String setChartSubCaption(String chartData, String subCaption)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartSubCaption(chartData, subCaption);
+        }
+
+        public String setChartXAxisName(String chartData, String chartXAxisName)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartXAxisName(chartData, chartXAxisName);
+        }
+
+        public String setChartYAxisName(String chartData, String chartYAxisName)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartYAxisName(chartData, chartYAxisName);
+        }
+
        
     }
 }

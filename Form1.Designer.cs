@@ -321,6 +321,7 @@
             this.txt_fcve_chart_sub_caption.Name = "txt_fcve_chart_sub_caption";
             this.txt_fcve_chart_sub_caption.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_sub_caption.TabIndex = 29;
+            this.txt_fcve_chart_sub_caption.TextChanged += new System.EventHandler(this.txt_fcve_chart_sub_caption_TextChanged);
             // 
             // label10
             // 
@@ -349,6 +350,7 @@
             this.txt_fcve_chart_xaxis_name.Name = "txt_fcve_chart_xaxis_name";
             this.txt_fcve_chart_xaxis_name.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_xaxis_name.TabIndex = 35;
+            this.txt_fcve_chart_xaxis_name.TextChanged += new System.EventHandler(this.txt_fcve_chart_xaxis_name_TextChanged);
             // 
             // txt_fcve_chart_yaxis_name
             // 
@@ -357,6 +359,7 @@
             this.txt_fcve_chart_yaxis_name.Name = "txt_fcve_chart_yaxis_name";
             this.txt_fcve_chart_yaxis_name.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_yaxis_name.TabIndex = 36;
+            this.txt_fcve_chart_yaxis_name.TextChanged += new System.EventHandler(this.txt_fcve_chart_yaxis_name_TextChanged);
             // 
             // form_fcve
             // 

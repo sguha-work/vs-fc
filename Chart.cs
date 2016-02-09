@@ -134,6 +134,13 @@ namespace fc_ve
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
 
+        public String setChartSubCaption(String chartData, String subCaption)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.dataSource.chart.subcaption = subCaption;
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
+        }
+
         public String getChartXAxisName(String chartData)
         {
             String chartXAxisName = null;
@@ -185,5 +192,21 @@ namespace fc_ve
             }
             return chartYAxisName;
         }
+
+        public String setChartXAxisName(String chartData, String chartXAxisName)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.dataSource.chart.xAxisName = chartXAxisName;
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
+        }
+
+        public String setChartYAxisName(String chartData, String chartYAxisName)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.dataSource.chart.yAxisName = chartYAxisName;
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
+        }
     }
+
+    
 }

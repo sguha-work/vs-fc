@@ -120,6 +120,13 @@ namespace fc_ve
             return infoFromChart;
         }
 
+        public String setChartInfo(String info, String chartData, String newValue)
+        {
+            String redefinedChartData = "";
+
+            return redefinedChartData;
+        }
+
         public String setChartWidthHeight(String chartData, String width, String height)
         {
             Chart object_chart = Chart.getInstance();
@@ -139,6 +146,23 @@ namespace fc_ve
             return object_chart.setChartCaption(chartData, caption);
         }
 
+        public String setChartSubCaption(String chartData, String subCaption)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartSubCaption(chartData, subCaption);
+        }
+
+        public String setChartXAxisName(String chartData, String chartXAxisName)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartXAxisName(chartData, chartXAxisName);
+        }
+
+        public String setChartYAxisName(String chartData, String chartYAxisName)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartYAxisName(chartData, chartYAxisName);
+        }
         
     }
 }

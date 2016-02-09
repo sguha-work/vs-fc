@@ -126,6 +126,30 @@ namespace fc_ve
             
         }
 
+        private void txt_fcve_chart_sub_caption_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_fcve_chart_sub_caption.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartSubCaption(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_sub_caption.Text.ToString());
+            }
+        }
+
+        private void txt_fcve_chart_xaxis_name_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_fcve_chart_xaxis_name.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartXAxisName(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_xaxis_name.Text.ToString());
+            }
+        }
+
+        private void txt_fcve_chart_yaxis_name_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_fcve_chart_yaxis_name.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartXAxisName(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_yaxis_name.Text.ToString());
+            }
+        }
+
         
 
         
