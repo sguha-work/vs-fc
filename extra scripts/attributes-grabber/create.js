@@ -106,14 +106,24 @@ readAndPrepareFileContent = (function(fileName) {
 		}
 		
 		fs.readFile("data/"+fileNameObject[keyName], function(error, data) {
-			
-
-			attributes["data"] = {};
+			var dataWithoutEvent = "";
 			if(!error) {
-				attributes["data"]["JSON"] = escape(data);
+							
+				data = data.toString('ascii', 0, data.length);
+				if(data.indexOf('"events"') == -1) {
+					attributes["data"] = {};
+					attributes["data"]["JSON"] = escape(data);
+				} else {
+					attributes["data"] = {};
+					attributes["data"]["JSON"] = "";	
+				}
+				
+				
 			} else {
+				attributes["data"] = {};
 				attributes["data"]["JSON"] = "";
 			}
+
 			finalJSON[keyName] = attributes;
 		});
 	});
