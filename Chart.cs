@@ -126,5 +126,12 @@ namespace fc_ve
             obj.height = height;
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
+
+        public String setChartCaption(String chartData, String caption)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.dataSource.chart.caption = caption;
+            return JsonConvert.SerializeObject(obj, Formatting.Indented);
+        }
     }
 }

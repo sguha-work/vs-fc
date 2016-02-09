@@ -111,6 +111,15 @@ namespace fc_ve
             txt_fcve_json_data.Text = object_prepareFormElements.setChartWidthHeight(txt_fcve_json_data.Text, txt_fcve_chart_width.Text, txt_fcve_chart_height.Text);
         }
 
+        private void txt_fcve_chart_caption_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_fcve_chart_caption.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartCaption(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_caption.Text.ToString());
+            }
+            
+        }
+
         
 
         

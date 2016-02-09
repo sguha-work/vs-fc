@@ -124,5 +124,11 @@ namespace fc_ve
             XDocument xdoc = JsonConvert.DeserializeXNode(JsonConvert.SerializeObject(obj.dataSource), "chart");              
             return xdoc.ToString();
         }
+
+        public String setChartCaption(String chartData, String caption)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartCaption(chartData, caption);
+        }
     }
 }

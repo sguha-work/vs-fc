@@ -69,5 +69,11 @@ namespace fc_ve
             Common object_common = Common.getInstance();
             return object_common.convertJSONToXML(jsonData);
         }
+
+        public String setChartCaption(String chartData, String caption)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartCaption(chartData, caption);
+        }
     }
 }

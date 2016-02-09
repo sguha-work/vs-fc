@@ -319,6 +319,7 @@
             this.txt_fcve_chart_caption.Name = "txt_fcve_chart_caption";
             this.txt_fcve_chart_caption.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_caption.TabIndex = 4;
+            this.txt_fcve_chart_caption.TextChanged += new System.EventHandler(this.txt_fcve_chart_caption_TextChanged);
             // 
             // label1
             // 
