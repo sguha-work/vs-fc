@@ -59,6 +59,23 @@ namespace fc_ve
             // setting chart yAxisName
             String chartYAxisName = object_prepareFormElements.getChartInfo("yAxisName", chartType, System.IO.File.ReadAllText("dataSource/final.json"));
             txt_fcve_chart_yaxis_name.Text = chartYAxisName;
+
+            // setting up the chart data grid
+            dgv_fcve_chart_data.DataSource = object_prepareFormElements.getChartDataOnly(txt_fcve_json_data.Text);
+
+            //setting up theme
+            if (rb_fcve_theme_zune.Checked)
+            {
+                rb_fcve_theme_zune.Checked = false;
+            }
+            if (rb_fcve_theme_ocean.Checked)
+            {
+                rb_fcve_theme_ocean.Checked = false;
+            }
+            if (rb_fcve_theme_carbon.Checked)
+            {
+                rb_fcve_theme_carbon.Checked = false;
+            }
         }
 
         /// <summary>
@@ -82,6 +99,9 @@ namespace fc_ve
 
             // converting JSON data to XML
             txt_fcve_xml_data.Text = object_prepareFormElements.convertJSONToXML(txt_fcve_json_data.Text.ToString());
+
+            // changing the data grid value
+            dgv_fcve_chart_data.DataSource = object_prepareFormElements.getChartDataOnly(txt_fcve_json_data.Text);
         }
 
         /// <summary>
@@ -178,6 +198,33 @@ namespace fc_ve
             int visibleTime = 3000;  //in milliseconds
             ToolTip tt = new ToolTip();
             tt.Show("Type and press Enter to effect", TB, 50, 20, visibleTime);
+        }
+
+        private void rb_fcve_theme_zune_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_fcve_theme_zune.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartTheme(txt_fcve_json_data.Text, "zune");
+            }
+            
+        }
+
+        private void rb_fcve_theme_ocean_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_fcve_theme_ocean.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartTheme(txt_fcve_json_data.Text, "ocean");
+            }
+            
+        }
+
+        private void rb_fcve_theme_carbon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_fcve_theme_carbon.Focused)
+            {
+                txt_fcve_json_data.Text = object_prepareFormElements.setChartTheme(txt_fcve_json_data.Text, "carbon");
+            }
+            
         }
 
        

@@ -195,6 +195,28 @@ namespace fc_ve
             obj.dataSource.chart.yAxisName = chartYAxisName;
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
+
+        public dynamic  getChartDataOnly(String chartData)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            var data = obj.dataSource.data;
+            return data;
+        }
+
+        public String setChartTheme(String chartData, String themeName)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+            obj.dataSource.chart.theme = themeName;
+            if (obj.dataSource.chart.paletteColors != null)
+            {
+                obj.dataSource.chart.paletteColors="";
+            }
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            
+            settings.DefaultValueHandling = DefaultValueHandling.Ignore;
+            return JsonConvert.SerializeObject(obj, Formatting.Indented, settings).ToString().Replace("\"paletteColors\": \"\",","");
+            
+        }
     }
 
     

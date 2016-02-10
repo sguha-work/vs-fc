@@ -94,8 +94,17 @@ namespace fc_ve
             return object_common.setChartYAxisName(chartData, chartYAxisName);
         }
 
-        
+        public dynamic getChartDataOnly(String chartData)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.getChartDataOnly(chartData);
+        }
 
+        public String setChartTheme(String chartData, String themeName)
+        {
+            Common object_common = Common.getInstance();
+            return object_common.setChartTheme(chartData, themeName);
+        }
        
     }
 }

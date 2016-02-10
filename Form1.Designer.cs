@@ -57,9 +57,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txt_fcve_chart_xaxis_name = new System.Windows.Forms.TextBox();
             this.txt_fcve_chart_yaxis_name = new System.Windows.Forms.TextBox();
+            this.dgv_fcve_chart_data = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rb_fcve_theme_carbon = new System.Windows.Forms.RadioButton();
+            this.rb_fcve_theme_ocean = new System.Windows.Forms.RadioButton();
+            this.rb_fcve_theme_zune = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_fcve_chart_data)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // wb_fcve_chart
@@ -365,11 +373,84 @@
             this.txt_fcve_chart_yaxis_name.Enter += new System.EventHandler(this.txt_fcve_chart_yaxis_name_Enter);
             this.txt_fcve_chart_yaxis_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fcve_chart_yaxis_name_KeyPress);
             // 
+            // dgv_fcve_chart_data
+            // 
+            this.dgv_fcve_chart_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_fcve_chart_data.Location = new System.Drawing.Point(22, 472);
+            this.dgv_fcve_chart_data.Name = "dgv_fcve_chart_data";
+            this.dgv_fcve_chart_data.Size = new System.Drawing.Size(1034, 121);
+            this.dgv_fcve_chart_data.TabIndex = 37;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rb_fcve_theme_carbon);
+            this.groupBox2.Controls.Add(this.rb_fcve_theme_ocean);
+            this.groupBox2.Controls.Add(this.rb_fcve_theme_zune);
+            this.groupBox2.Location = new System.Drawing.Point(626, 439);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox2.Size = new System.Drawing.Size(214, 23);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            // 
+            // rb_fcve_theme_carbon
+            // 
+            this.rb_fcve_theme_carbon.AutoSize = true;
+            this.rb_fcve_theme_carbon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_fcve_theme_carbon.Location = new System.Drawing.Point(144, 3);
+            this.rb_fcve_theme_carbon.Name = "rb_fcve_theme_carbon";
+            this.rb_fcve_theme_carbon.Size = new System.Drawing.Size(72, 21);
+            this.rb_fcve_theme_carbon.TabIndex = 3;
+            this.rb_fcve_theme_carbon.TabStop = true;
+            this.rb_fcve_theme_carbon.Text = "Carbon";
+            this.rb_fcve_theme_carbon.UseVisualStyleBackColor = true;
+            this.rb_fcve_theme_carbon.CheckedChanged += new System.EventHandler(this.rb_fcve_theme_carbon_CheckedChanged);
+            // 
+            // rb_fcve_theme_ocean
+            // 
+            this.rb_fcve_theme_ocean.AutoSize = true;
+            this.rb_fcve_theme_ocean.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_fcve_theme_ocean.Location = new System.Drawing.Point(70, 2);
+            this.rb_fcve_theme_ocean.Name = "rb_fcve_theme_ocean";
+            this.rb_fcve_theme_ocean.Size = new System.Drawing.Size(68, 21);
+            this.rb_fcve_theme_ocean.TabIndex = 2;
+            this.rb_fcve_theme_ocean.TabStop = true;
+            this.rb_fcve_theme_ocean.Text = "Ocean";
+            this.rb_fcve_theme_ocean.UseVisualStyleBackColor = true;
+            this.rb_fcve_theme_ocean.CheckedChanged += new System.EventHandler(this.rb_fcve_theme_ocean_CheckedChanged);
+            // 
+            // rb_fcve_theme_zune
+            // 
+            this.rb_fcve_theme_zune.AutoSize = true;
+            this.rb_fcve_theme_zune.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_fcve_theme_zune.Location = new System.Drawing.Point(4, 3);
+            this.rb_fcve_theme_zune.Name = "rb_fcve_theme_zune";
+            this.rb_fcve_theme_zune.Size = new System.Drawing.Size(59, 21);
+            this.rb_fcve_theme_zune.TabIndex = 0;
+            this.rb_fcve_theme_zune.TabStop = true;
+            this.rb_fcve_theme_zune.Text = "Zune";
+            this.rb_fcve_theme_zune.UseVisualStyleBackColor = true;
+            this.rb_fcve_theme_zune.CheckedChanged += new System.EventHandler(this.rb_fcve_theme_zune_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(531, 443);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 20);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Theme";
+            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 836);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dgv_fcve_chart_data);
             this.Controls.Add(this.txt_fcve_chart_yaxis_name);
             this.Controls.Add(this.txt_fcve_chart_xaxis_name);
             this.Controls.Add(this.label11);
@@ -403,6 +484,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_fcve_chart_data)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,6 +523,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_fcve_chart_xaxis_name;
         private System.Windows.Forms.TextBox txt_fcve_chart_yaxis_name;
+        private System.Windows.Forms.DataGridView dgv_fcve_chart_data;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rb_fcve_theme_carbon;
+        private System.Windows.Forms.RadioButton rb_fcve_theme_ocean;
+        private System.Windows.Forms.RadioButton rb_fcve_theme_zune;
+        private System.Windows.Forms.Label label12;
     }
 }
 

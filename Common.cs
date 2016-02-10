@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Xml;
 using Newtonsoft.Json;
-using System.Xml;
 using System.Xml.Linq;
 namespace fc_ve
 {
@@ -63,14 +62,14 @@ namespace fc_ve
         /// <returns></returns>
         public String prepareHTMLDataFromChartData(String chartData, String chartContainer, int width, int height)
         {
-           // Initiating the display html text
+            // Initiating the display html text
             String htmlToDisplay = "<!DOCTYPE html><html><head><meta http-equiv='X-UA-Compatible' content='IE=10' >";
-              // Declaring the libraries links of FusionCharts which are necessary
-               String[] fusionChartsLibraryLinks = new String[] {"http://static.fusioncharts.com/code/latest/fusioncharts.js", "http://static.fusioncharts.com/code/latest/fusioncharts.charts.js"};
+            // Declaring the libraries links of FusionCharts which are necessary
+            String[] fusionChartsLibraryLinks = new String[] {"http://static.fusioncharts.com/code/latest/fusioncharts.js", "http://static.fusioncharts.com/code/latest/fusioncharts.charts.js"};
 
-             // Declaring Chart parameters
+            String[] fusionChartsThemesLibraryLinks = new String[] { "http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.carbon.js", "http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.ocean.js", "http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.zune.js" };
             
-
+            
         
 
             // Preparing the script tags for every libraries
@@ -79,6 +78,15 @@ namespace fc_ve
             {
                 fcScriptLink = fcScriptLink + "<script type='text/javascript' src='" + link + "'></script>";
             }
+
+            if(chartData.IndexOf("\"theme\"")!=-1)
+            {
+                foreach (String link in fusionChartsThemesLibraryLinks)
+                {
+                    fcScriptLink = fcScriptLink + "<script type='text/javascript' src='" + link + "'></script>";
+                }
+            }
+
             chartContainer = "chart-container";
             String container = "<div id='"+chartContainer+"' style='width:"+width+"px; height:"+height+"px;'></div>";
 
@@ -162,6 +170,18 @@ namespace fc_ve
         {
             Chart object_chart = Chart.getInstance();
             return object_chart.setChartYAxisName(chartData, chartYAxisName);
+        }
+
+        public dynamic getChartDataOnly(String chartData)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.getChartDataOnly(chartData);
+        }
+
+        public String setChartTheme(String chartData, String themeName)
+        {
+            Chart object_chart = Chart.getInstance();
+            return object_chart.setChartTheme(chartData, themeName);
         }
         
     }
