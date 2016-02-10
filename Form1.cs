@@ -180,6 +180,8 @@ namespace fc_ve
             tt.Show("Type and press Enter to effect", TB, 50, 20, visibleTime);
         }
 
+       
+
         
 
         

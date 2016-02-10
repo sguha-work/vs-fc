@@ -36,31 +36,27 @@ namespace fc_ve
         public String getChartCaption(String chartData)
         {
             String chartCaption = null;
-            Int32 indexOfCaption = chartData.ToLower().IndexOf("\"caption");
-            if (indexOfCaption == -1)
+            try
             {
-                return chartCaption;
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
+                if (obj.dataSource.chart.Caption != null)
+                {
+                    chartCaption = obj.dataSource.chart.Caption.Value;
+                }
+                else if (obj.dataSource.chart.caption != null)
+                {
+                    chartCaption = obj.dataSource.chart.caption.Value;
+                }
+                else
+                {
+                    chartCaption = "";
+                }
             }
-            else
+            catch (Exception e)
             {
-                Int32 index = indexOfCaption;
-                while (chartData[index] != ':') 
-                {
-                    index++;
-                }
-                index+=1;
-                while (chartData[index] != '"')
-                {
-                    index++;
-                }
-                index += 1;
-                while (chartData[index] != '"')
-                {
-                    chartCaption += chartData[index];
-                    index++;
-                }
-                    return chartCaption;
+                chartCaption = "";
             }
+            return chartCaption;
             
         }
 
@@ -147,14 +143,11 @@ namespace fc_ve
             try
             {
                 dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
-                if (obj.dataSource.chart.subCaption != null)
+                if (obj.dataSource.chart.xAxisName != null)
                 {
                     chartXAxisName = obj.dataSource.chart.xAxisName.Value;
                 }
-                else if (obj.dataSource.chart.subcaption != null)
-                {
-                    chartXAxisName = obj.dataSource.chart.xAxisName.Value;
-                }
+               
                 else
                 {
                     chartXAxisName = "";
@@ -173,11 +166,7 @@ namespace fc_ve
             try
             {
                 dynamic obj = JsonConvert.DeserializeObject<dynamic>(chartData);
-                if (obj.dataSource.chart.subCaption != null)
-                {
-                    chartYAxisName = obj.dataSource.chart.yAxisName.Value;
-                }
-                else if (obj.dataSource.chart.subcaption != null)
+                if (obj.dataSource.chart.yAxisName != null)
                 {
                     chartYAxisName = obj.dataSource.chart.yAxisName.Value;
                 }
