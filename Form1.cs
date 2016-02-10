@@ -117,38 +117,80 @@ namespace fc_ve
             txt_fcve_json_data.Text = object_prepareFormElements.setChartWidthHeight(txt_fcve_json_data.Text, txt_fcve_chart_width.Text, txt_fcve_chart_height.Text);
         }
 
-        private void txt_fcve_chart_caption_TextChanged(object sender, EventArgs e)
+       
+        private void txt_fcve_chart_caption_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txt_fcve_chart_caption.Focused)
+            if (txt_fcve_chart_caption.Focused && e.KeyChar == (char)Keys.Return)
             {
                 txt_fcve_json_data.Text = object_prepareFormElements.setChartCaption(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_caption.Text.ToString());
             }
-            
         }
 
-        private void txt_fcve_chart_sub_caption_TextChanged(object sender, EventArgs e)
+        private void txt_fcve_chart_caption_Enter(object sender, EventArgs e)
         {
-            if (txt_fcve_chart_sub_caption.Focused)
+            showToolTip(sender);
+        }
+
+        
+
+        private void txt_fcve_chart_sub_caption_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txt_fcve_chart_sub_caption.Focused && e.KeyChar == (char)Keys.Return)
             {
                 txt_fcve_json_data.Text = object_prepareFormElements.setChartSubCaption(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_sub_caption.Text.ToString());
             }
         }
 
-        private void txt_fcve_chart_xaxis_name_TextChanged(object sender, EventArgs e)
+        private void txt_fcve_chart_sub_caption_Enter(object sender, EventArgs e)
         {
-            if (txt_fcve_chart_xaxis_name.Focused)
+            showToolTip(sender);
+        }
+
+        private void txt_fcve_chart_xaxis_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txt_fcve_chart_xaxis_name.Focused && e.KeyChar == (char)Keys.Return)
             {
                 txt_fcve_json_data.Text = object_prepareFormElements.setChartXAxisName(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_xaxis_name.Text.ToString());
             }
         }
 
-        private void txt_fcve_chart_yaxis_name_TextChanged(object sender, EventArgs e)
+        private void txt_fcve_chart_xaxis_name_Enter(object sender, EventArgs e)
         {
-            if (txt_fcve_chart_yaxis_name.Focused)
+            showToolTip(sender);
+        }
+
+        private void txt_fcve_chart_yaxis_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txt_fcve_chart_yaxis_name.Focused && e.KeyChar == (char)Keys.Return)
             {
                 txt_fcve_json_data.Text = object_prepareFormElements.setChartXAxisName(txt_fcve_json_data.Text.ToString(), txt_fcve_chart_yaxis_name.Text.ToString());
             }
         }
+
+        private void txt_fcve_chart_yaxis_name_Enter(object sender, EventArgs e)
+        {
+            showToolTip(sender);
+        }
+
+        private void showToolTip(object sender)
+        {
+            TextBox TB = (TextBox)sender;
+            int visibleTime = 3000;  //in milliseconds
+            ToolTip tt = new ToolTip();
+            tt.Show("Type and press Enter to effect", TB, 50, 20, visibleTime);
+        }
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
 
         
 

@@ -302,7 +302,8 @@
             this.txt_fcve_chart_caption.Name = "txt_fcve_chart_caption";
             this.txt_fcve_chart_caption.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_caption.TabIndex = 4;
-            this.txt_fcve_chart_caption.TextChanged += new System.EventHandler(this.txt_fcve_chart_caption_TextChanged);
+            this.txt_fcve_chart_caption.Enter += new System.EventHandler(this.txt_fcve_chart_caption_Enter);
+            this.txt_fcve_chart_caption.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fcve_chart_caption_KeyPress);
             // 
             // label1
             // 
@@ -321,7 +322,8 @@
             this.txt_fcve_chart_sub_caption.Name = "txt_fcve_chart_sub_caption";
             this.txt_fcve_chart_sub_caption.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_sub_caption.TabIndex = 29;
-            this.txt_fcve_chart_sub_caption.TextChanged += new System.EventHandler(this.txt_fcve_chart_sub_caption_TextChanged);
+            this.txt_fcve_chart_sub_caption.Enter += new System.EventHandler(this.txt_fcve_chart_sub_caption_Enter);
+            this.txt_fcve_chart_sub_caption.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fcve_chart_sub_caption_KeyPress);
             // 
             // label10
             // 
@@ -350,7 +352,8 @@
             this.txt_fcve_chart_xaxis_name.Name = "txt_fcve_chart_xaxis_name";
             this.txt_fcve_chart_xaxis_name.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_xaxis_name.TabIndex = 35;
-            this.txt_fcve_chart_xaxis_name.TextChanged += new System.EventHandler(this.txt_fcve_chart_xaxis_name_TextChanged);
+            this.txt_fcve_chart_xaxis_name.Enter += new System.EventHandler(this.txt_fcve_chart_xaxis_name_Enter);
+            this.txt_fcve_chart_xaxis_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fcve_chart_xaxis_name_KeyPress);
             // 
             // txt_fcve_chart_yaxis_name
             // 
@@ -359,7 +362,8 @@
             this.txt_fcve_chart_yaxis_name.Name = "txt_fcve_chart_yaxis_name";
             this.txt_fcve_chart_yaxis_name.Size = new System.Drawing.Size(429, 23);
             this.txt_fcve_chart_yaxis_name.TabIndex = 36;
-            this.txt_fcve_chart_yaxis_name.TextChanged += new System.EventHandler(this.txt_fcve_chart_yaxis_name_TextChanged);
+            this.txt_fcve_chart_yaxis_name.Enter += new System.EventHandler(this.txt_fcve_chart_yaxis_name_Enter);
+            this.txt_fcve_chart_yaxis_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fcve_chart_yaxis_name_KeyPress);
             // 
             // form_fcve
             // 
