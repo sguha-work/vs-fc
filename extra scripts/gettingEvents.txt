@@ -1,0 +1,1 @@
+var data = {};$("h2.monospace-code").each(function(){data[$(this).text().split("\n").join("").split("static event").join("")]=$(".description p:first",$(this).next()[0]).text();});console.log(JSON.stringify(data, null, 4));

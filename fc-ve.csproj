@@ -92,6 +92,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="dataSource\event-data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="dataSource\final.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

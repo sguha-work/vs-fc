@@ -63,6 +63,7 @@
             this.rb_fcve_theme_ocean = new System.Windows.Forms.RadioButton();
             this.rb_fcve_theme_zune = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel_fcve_events = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
@@ -443,11 +444,19 @@
             this.label12.TabIndex = 38;
             this.label12.Text = "Theme";
             // 
+            // panel_fcve_events
+            // 
+            this.panel_fcve_events.Location = new System.Drawing.Point(1078, 91);
+            this.panel_fcve_events.Name = "panel_fcve_events";
+            this.panel_fcve_events.Size = new System.Drawing.Size(357, 733);
+            this.panel_fcve_events.TabIndex = 39;
+            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 836);
+            this.ClientSize = new System.Drawing.Size(1447, 836);
+            this.Controls.Add(this.panel_fcve_events);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv_fcve_chart_data);
@@ -529,6 +538,7 @@
         private System.Windows.Forms.RadioButton rb_fcve_theme_ocean;
         private System.Windows.Forms.RadioButton rb_fcve_theme_zune;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel_fcve_events;
     }
 }
 

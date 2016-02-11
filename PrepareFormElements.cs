@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Windows.Forms;
 namespace fc_ve
 {
     class PrepareFormElements
@@ -104,6 +105,27 @@ namespace fc_ve
         {
             Common object_common = Common.getInstance();
             return object_common.setChartTheme(chartData, themeName);
+        }
+
+        public CheckBox[] getEventCheckBoxes(String eventDataJson)
+        {
+            
+            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            Dictionary<String, String> eventDataList = ser.Deserialize<Dictionary<String, String>>(eventDataJson);
+            CheckBox[] checkboxArray = new CheckBox[eventDataList.Count];
+            int count = 1; 
+            foreach (String eventName in eventDataList.Keys)
+            {
+                CheckBox cb = new CheckBox();
+                cb.Location = new System.Drawing.Point(10, (25 * count) + 2);
+                
+                cb.Name = "cb_" + eventName;
+                cb.Text = eventName;
+                checkboxArray[count - 1] = cb;
+                //panel1.Controls.Add(label);
+                count++;
+            }
+            return checkboxArray;
         }
        
     }

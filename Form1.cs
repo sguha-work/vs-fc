@@ -30,6 +30,14 @@ namespace fc_ve
             cb_fcve_chart_type.DataSource = object_prepareFormElements.prepareChartTypes(System.IO.File.ReadAllText("dataSource/final.json"));
             Object selectedItem = cb_fcve_chart_type.SelectedItem;
             startLoadingTheChart(selectedItem);
+
+            // setup the event section
+            CheckBox[] checkBoxArray = object_prepareFormElements.getEventCheckBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
+            foreach(CheckBox cb in checkBoxArray)
+            {
+                panel_fcve_events.Controls.Add(cb);
+            }
+            
         }
 
         public void startLoadingTheChart(Object selectedItem)

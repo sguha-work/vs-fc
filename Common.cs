@@ -91,7 +91,7 @@ namespace fc_ve
             String container = "<div id='"+chartContainer+"' style='width:"+width+"px; height:"+height+"px;'></div>";
 
             // preparing chart code    
-            String chartCode = "<script type='text/javascript'>FusionCharts.ready(function(){ var chart = new FusionCharts("+chartData+").render(); })</script>";
+            String chartCode = "<script type='text/javascript'>FusionCharts.ready(function(){ var chart = new FusionCharts("+chartData+").render(); });</script>";
 
             // preparing the final out put html
             htmlToDisplay += fcScriptLink + "</head><body>" + container + chartCode + "</body></html>";
