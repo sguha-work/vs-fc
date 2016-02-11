@@ -32,16 +32,22 @@ namespace fc_ve
             startLoadingTheChart(selectedItem);
 
             // setup the event section
-            CheckBox[] checkBoxArray = object_prepareFormElements.getEventCheckBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
             TextBox[] textBoxArray = object_prepareFormElements.getEventTextBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
+            CheckBox[] checkBoxArray = object_prepareFormElements.getEventCheckBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
+            
             
             for(int index=0; index<checkBoxArray.Length; index++)
             {
-                panel_fcve_events.Controls.Add(checkBoxArray[index]);
                 panel_fcve_events_code.Controls.Add(textBoxArray[index]);
+                panel_fcve_events.Controls.Add(checkBoxArray[index]);
+                
             }
-
-            
+            foreach (Control c in panel_fcve_events.Controls)
+            {
+                CheckBox check = (CheckBox)c;
+                check.Click += new EventHandler(event_checkbox_Click);
+            }
+                    
         }
 
         public void startLoadingTheChart(Object selectedItem)
@@ -234,13 +240,28 @@ namespace fc_ve
         {
             if (rb_fcve_theme_carbon.Focused)
             {
-                txt_fcve_json_data.Text = object_prepareFormElements.setChartTheme(txt_fcve_json_data.Text, "carbon");
+               txt_fcve_json_data.Text = object_prepareFormElements.setChartTheme(txt_fcve_json_data.Text, "carbon");
             }
             
         }
 
-       
 
+        private void event_checkbox_Click(object sender, EventArgs e)
+        {
+            panel_fcve_events_code.Update();
+            panel_fcve_events_code.Refresh();
+            CheckBox cb = sender as CheckBox;
+            String checkBoxName = cb.Name;
+            String textBoxName = "txt_fcve_" + checkBoxName.Split('_')[2];
+            if (cb.Checked)
+            {
+                panel_fcve_events_code.Controls[textBoxName].Visible = true;
+            }
+            else
+            {
+                panel_fcve_events_code.Controls[textBoxName].Visible = false;
+            }
+        }
         
 
         

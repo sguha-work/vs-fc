@@ -123,6 +123,8 @@ namespace fc_ve
                     cb.Name = "cb_fcve_" + eventName;
                     cb.Text = eventName;
                     cb.AutoSize = true;
+                    //cb.Click += new EventHandler((new form_fcve()).event_checkbox_Click);
+                    //cb.Parent = parent;
                     checkboxArray[count - 1] = cb;
                     count++;
                 }
@@ -145,8 +147,10 @@ namespace fc_ve
                     tb.Width = 349;
                     tb.Height = 344;
                     tb.Name = "txt_fcve_" + eventName;
+                    tb.AccessibleName = "txt_fcve_" + eventName;
                     tb.Text = "\n\nvar "+eventName+" = (function(){\n //write your code here\n});".Replace("\n", System.Environment.NewLine);
                     tb.Multiline = true;
+                    //tb.Parent = parent;
                     textboxArray[count - 1] = tb;
                     tb.Visible = false;
                     count++;
@@ -154,6 +158,7 @@ namespace fc_ve
             }
             return textboxArray;
         }
+
        
     }
 }
