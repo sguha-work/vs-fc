@@ -64,6 +64,9 @@
             this.rb_fcve_theme_zune = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.panel_fcve_events = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel_fcve_events_code = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
@@ -446,16 +449,50 @@
             // 
             // panel_fcve_events
             // 
-            this.panel_fcve_events.Location = new System.Drawing.Point(1078, 91);
+            this.panel_fcve_events.AutoScroll = true;
+            this.panel_fcve_events.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_fcve_events.Location = new System.Drawing.Point(1078, 101);
             this.panel_fcve_events.Name = "panel_fcve_events";
-            this.panel_fcve_events.Size = new System.Drawing.Size(357, 733);
+            this.panel_fcve_events.Size = new System.Drawing.Size(357, 335);
             this.panel_fcve_events.TabIndex = 39;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1083, 72);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(326, 17);
+            this.label13.TabIndex = 40;
+            this.label13.Text = "Events ( Check event name and write code below )";
+            // 
+            // panel_fcve_events_code
+            // 
+            this.panel_fcve_events_code.AutoScroll = true;
+            this.panel_fcve_events_code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_fcve_events_code.Location = new System.Drawing.Point(1078, 472);
+            this.panel_fcve_events_code.Name = "panel_fcve_events_code";
+            this.panel_fcve_events_code.Size = new System.Drawing.Size(357, 352);
+            this.panel_fcve_events_code.TabIndex = 40;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1075, 446);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(341, 17);
+            this.label14.TabIndex = 41;
+            this.label14.Text = "Here below the text box will apper to write event code";
             // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 836);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.panel_fcve_events_code);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.panel_fcve_events);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
@@ -539,6 +576,9 @@
         private System.Windows.Forms.RadioButton rb_fcve_theme_zune;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel_fcve_events;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel_fcve_events_code;
+        private System.Windows.Forms.Label label14;
     }
 }
 

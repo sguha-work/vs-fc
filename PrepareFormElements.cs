@@ -112,20 +112,47 @@ namespace fc_ve
             
             JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
             Dictionary<String, String> eventDataList = ser.Deserialize<Dictionary<String, String>>(eventDataJson);
-            CheckBox[] checkboxArray = new CheckBox[eventDataList.Count];
+            CheckBox[] checkboxArray = new CheckBox[eventDataList.Count-1];
             int count = 1; 
             foreach (String eventName in eventDataList.Keys)
             {
-                CheckBox cb = new CheckBox();
-                cb.Location = new System.Drawing.Point(10, (25 * count) + 2);
-                
-                cb.Name = "cb_" + eventName;
-                cb.Text = eventName;
-                checkboxArray[count - 1] = cb;
-                //panel1.Controls.Add(label);
-                count++;
+                if (eventName.ToLower() != "ready")
+                {
+                    CheckBox cb = new CheckBox();
+                    cb.Location = new System.Drawing.Point(10, (25 * count) + 2);
+                    cb.Name = "cb_fcve_" + eventName;
+                    cb.Text = eventName;
+                    cb.AutoSize = true;
+                    checkboxArray[count - 1] = cb;
+                    count++;
+                }
             }
             return checkboxArray;
+        }
+
+        public TextBox[] getEventTextBoxes(String eventDataJson)
+        {
+
+            JavaScriptSerializer ser = new JavaScriptSerializer() { MaxJsonLength = 86753090 };
+            Dictionary<String, String> eventDataList = ser.Deserialize<Dictionary<String, String>>(eventDataJson);
+            TextBox[] textboxArray = new TextBox[eventDataList.Count - 1];
+            int count = 1;
+            foreach (String eventName in eventDataList.Keys)
+            {
+                if (eventName.ToLower() != "ready")
+                {
+                    TextBox tb = new TextBox();
+                    tb.Width = 349;
+                    tb.Height = 344;
+                    tb.Name = "txt_fcve_" + eventName;
+                    tb.Text = "\n\nvar "+eventName+" = (function(){\n //write your code here\n});".Replace("\n", System.Environment.NewLine);
+                    tb.Multiline = true;
+                    textboxArray[count - 1] = tb;
+                    tb.Visible = false;
+                    count++;
+                }
+            }
+            return textboxArray;
         }
        
     }

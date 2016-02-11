@@ -33,10 +33,14 @@ namespace fc_ve
 
             // setup the event section
             CheckBox[] checkBoxArray = object_prepareFormElements.getEventCheckBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
-            foreach(CheckBox cb in checkBoxArray)
+            TextBox[] textBoxArray = object_prepareFormElements.getEventTextBoxes(System.IO.File.ReadAllText("dataSource/event-data.json"));
+            
+            for(int index=0; index<checkBoxArray.Length; index++)
             {
-                panel_fcve_events.Controls.Add(cb);
+                panel_fcve_events.Controls.Add(checkBoxArray[index]);
+                panel_fcve_events_code.Controls.Add(textBoxArray[index]);
             }
+
             
         }
 
