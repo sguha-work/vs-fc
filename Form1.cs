@@ -21,7 +21,12 @@ namespace fc_ve
         private void form_vbfc_Load(object sender, EventArgs e)
         {
             object_prepareFormElements = new PrepareFormElements();
-            this.initializeFormElements(); 
+            this.initializeFormElements();
+            System.IO.DirectoryInfo di = new DirectoryInfo("dataSource/events/");
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
         }
 
         private void initializeFormElements()
@@ -47,8 +52,14 @@ namespace fc_ve
                 CheckBox check = (CheckBox)c;
                 check.Click += new EventHandler(event_checkbox_Click);
             }
+            foreach (Control t in panel_fcve_events_code.Controls)
+            {
+                TextBox tb = (TextBox)t;
+                tb.TextChanged += new EventHandler(event_text_changed);
+            }
                     
         }
+
 
         public void startLoadingTheChart(Object selectedItem)
         {
@@ -94,6 +105,7 @@ namespace fc_ve
             {
                 rb_fcve_theme_carbon.Checked = false;
             }
+            
         }
 
         /// <summary>
@@ -106,7 +118,8 @@ namespace fc_ve
             int selectedIndex = cb_fcve_chart_type.SelectedIndex;
             Object selectedItem = cb_fcve_chart_type.SelectedItem;
             startLoadingTheChart(selectedItem);
-            
+            // resetting all events
+            resetEvents();
         }
 
         private void txt_fcve_json_data_TextChanged(object sender, EventArgs e)
@@ -245,26 +258,54 @@ namespace fc_ve
             
         }
 
-
+        private void resetEvents()
+        {
+            foreach (Control t in panel_fcve_events_code.Controls)
+            {
+                TextBox tb = (TextBox)t;
+                tb.Text = "\n\nvar " + tb.Name.Split('_')[2] + " = (function(){\n //write your code here\n});".Replace("\n", System.Environment.NewLine);
+                
+            }
+            System.IO.DirectoryInfo di = new DirectoryInfo("dataSource/events/");
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+        }
         private void event_checkbox_Click(object sender, EventArgs e)
         {
-            panel_fcve_events_code.Update();
-            panel_fcve_events_code.Refresh();
             CheckBox cb = sender as CheckBox;
             String checkBoxName = cb.Name;
             String textBoxName = "txt_fcve_" + checkBoxName.Split('_')[2];
             if (cb.Checked)
             {
+                foreach (Control c in panel_fcve_events_code.Controls)
+                {
+                    TextBox t = (TextBox)c;
+                    t.Visible = false;
+                }
                 panel_fcve_events_code.Controls[textBoxName].Visible = true;
+                System.IO.File.WriteAllText("dataSource/events/" + checkBoxName.Split('_')[2] + ".js","");
+                
             }
             else
             {
                 panel_fcve_events_code.Controls[textBoxName].Visible = false;
+                
+                System.IO.File.Delete("dataSource/events/" + checkBoxName.Split('_')[2] + ".js");
             }
         }
-        
 
-        
+
+        private void event_text_changed(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb.Focused)
+            {
+                String eventText = tb.Text;
+                System.IO.File.WriteAllText("dataSource/events/" + tb.Name.Split('_')[2] + ".js", eventText);
+            }
+        }
 
         
 

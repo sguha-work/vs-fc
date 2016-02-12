@@ -67,7 +67,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel_fcve_events_code = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_fcve_chart_height)).BeginInit();
@@ -486,23 +485,11 @@
             this.label14.TabIndex = 41;
             this.label14.Text = "Here below the text box will apper to write event code";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1078, 791);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(357, 32);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Click To Submit Selected Events";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            // 
             // form_fcve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 836);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel_fcve_events_code);
             this.Controls.Add(this.label13);
@@ -590,7 +577,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Panel panel_fcve_events;
         public System.Windows.Forms.Panel panel_fcve_events_code;
     }

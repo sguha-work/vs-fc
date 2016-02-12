@@ -91,11 +91,27 @@ namespace fc_ve
             String container = "<div id='"+chartContainer+"' style='width:"+width+"px; height:"+height+"px;'></div>";
 
             // preparing chart code    
-            String chartCode = "<script type='text/javascript'>FusionCharts.ready(function(){ var chart = new FusionCharts("+chartData+").render(); });</script>";
+            String chartCode = "<script type='text/javascript'>FusionCharts.ready(function(){ var chart = new FusionCharts(" + chartData + "); " + checkAndGetEventCode() + "chart.render();});</script>";
 
             // preparing the final out put html
             htmlToDisplay += fcScriptLink + "</head><body>" + container + chartCode + "</body></html>";
             return htmlToDisplay;
+        }
+
+        private String checkAndGetEventCode()
+        {
+            String eventCode = "";
+            String[] eventFiles =  System.IO.Directory.GetFiles("dataSource/events", "*.js");
+            if (eventFiles.Length > 0) 
+            {
+                foreach (String file in eventFiles)
+                {
+                    String eventName = file.Split('.')[0].Split('\\')[1];
+                    String eventCodeText = System.IO.File.ReadAllText(file);
+                    eventCode += eventCodeText + System.IO.File.ReadAllText(file) + "chart.addEventListener('" + eventName + "'," + eventName + ");";
+                }
+            }
+            return eventCode;
         }
 
         public String getChartInfo(String info, String chartType, String data)
